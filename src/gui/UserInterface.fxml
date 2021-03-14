@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.UserInterfaceController">
+    <center>
+       <GridPane fx:id="grdPn" onMouseClicked="#onMouseClickGridPane" BorderPane.alignment="CENTER">
+       </GridPane>
+    </center>
+    <right>
+       <VBox alignment="CENTER" minHeight="250.0" minWidth="50.0" prefHeight="400.0" prefWidth="114.0" BorderPane.alignment="CENTER">
+          <Label fx:id="lblDiscrCurrentPlayer" text="Current Player" textFill="#260303">
+             <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+             </VBox.margin>
+             <font>
+                <Font size="13.0" />
+             </font>
+          </Label>
+          <Label fx:id="lblCurrentPlayer" text="" textFill="#260303">
+             <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+             </VBox.margin>
+             <font>
+                <Font size="13.0" />
+             </font>
+          </Label>
+         <ImageView fx:id="currentToken" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </ImageView>
+          <Label fx:id="lblWinner" prefHeight="100.0" prefWidth="70.0" text="Winner&#10;is&#10;Gretel" textAlignment="CENTER" textFill="#e20808">
+             <font>
+                <Font size="20.0" />
+             </font>
+            <opaqueInsets>
+               <Insets left="5.0" />
+            </opaqueInsets>
+          </Label>
+       </VBox>
+    </right>
+   <left>
+      <VBox maxWidth="-Infinity" prefHeight="200.0" prefWidth="120.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnNewGame" mnemonicParsing="false" onAction="#handleBtnNewGame" text="New Game">
+               <VBox.margin>
+                  <Insets bottom="100.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <RadioButton fx:id="btnTicTacToe" mnemonicParsing="false" text="Tic Tac Toe" toggleGroup="$tglGrpGame" onMouseClicked="#onOptionChange">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tglGrpGame" />
+               </toggleGroup>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="btnFourConnect" mnemonicParsing="false" text="Connect four" toggleGroup="$tglGrpGame" onMouseClicked="#onOptionChange">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </RadioButton>
+            <Label fx:id="lblPlayerOne" text="Player 1">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtFldPlayerOne">
+               <VBox.margin>
+                  <Insets top="7.0" />
+               </VBox.margin></TextField>
+            <Label fx:id="lblPlayerTwo" text="Player 2">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtFldPlayerTwo">
+               <VBox.margin>
+                  <Insets top="7.0" />
+               </VBox.margin></TextField>
+            <Button fx:id="btnStartGame" mnemonicParsing="false" onAction="#handleBtnStartGame" text="Start Game">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" top="30.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+</BorderPane>
